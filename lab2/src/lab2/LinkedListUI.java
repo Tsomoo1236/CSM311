@@ -73,5 +73,5 @@ public class LinkedListUI {
         System.out.println("9. Гарах");
         System.out.print("Enter your choice: ");
     }
-    //2024.2.27 18:02
+    //2024.2.27 18:07
 }
