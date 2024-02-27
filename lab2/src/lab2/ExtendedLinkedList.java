@@ -1,11 +1,12 @@
 package lab2;
 
 public class ExtendedLinkedList<T> {
-
+	
+//Эдгээр мөрүүд нь ExtendedLinkedList классын private хувьсагчидыг тодорхойлдог. 
     private Node<T> head;
     private int size;
-
-    // Node class representing elements in the linked list
+//Энэ код нь ExtendedLinkedList классын дотор байрлаж буй Node нэртэй классыг тодорхойлдог.  
+    // Энэ класс нь линк листийн элементийг илэрхийлэх обьект юм.
     private static class Node<T> {
         T data;
         Node<T> next;
@@ -16,13 +17,13 @@ public class ExtendedLinkedList<T> {
         }
     }
 
-    // Constructor to initialize an empty linked list
+    //Энэ код нь ExtendedLinkedList классын объект үүсгэх үед дуудагддаг функц юм.
     public ExtendedLinkedList() {
         this.head = null;
         this.size = 0;
     }
 
-    // Method to add a new element to the end of the linked list
+    //Энэ код нь линк лист руу элемент нэмэх функц юм.
     public void add(T data) {
         Node<T> newNode = new Node<>(data);
         if (head == null) {
@@ -37,7 +38,7 @@ public class ExtendedLinkedList<T> {
         size++;
     }
 
-    // Method to remove an element from the linked list
+    // Энэ код нь линк листээс элемент устгах функц юм
     public void remove(T data) {
         if (head == null) {
             return;
@@ -60,12 +61,12 @@ public class ExtendedLinkedList<T> {
         }
     }
 
-    // Method to get the size of the linked list
+    // Энэ код нь линк листийн хэмжээг авах функц юм. 
     public int size() {
         return size;
     }
 
-    // Method to get an element at a specific index
+    //Энэ код нь линк листээс тодорхой индекстэй элементийг авах функц юм
     public T get(int index) {
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException("Index out of bounds");
@@ -79,7 +80,7 @@ public class ExtendedLinkedList<T> {
         return current.data;
     }
 
-    // Method to check if the linked list contains a specific element
+    // Энэ код нь линк листээс элемент байгаа эсэхийг шалгах функц юм
     public boolean contains(T data) {
         Node<T> current = head;
         while (current != null) {
@@ -91,18 +92,18 @@ public class ExtendedLinkedList<T> {
         return false;
     }
 
-    // Method to clear all elements from the linked list
+    // Энэ код нь линк листийг хоосон болгож, хэмжээг 0 болгож тодорхойлдог.
     public void clear() {
         head = null;
         size = 0;
     }
 
-    // Method to check if the linked list is empty
+    // Энэ код нь линк лист хоосон байгаа эсэхийг шалгах функц юм. 
     public boolean isEmpty() {
         return size == 0;
     }
 
-    // Method to display the elements in the linked list
+    // main функц нь програмын эх код болон жагсаалтын функцүүдийг туршиж дуудаж байгаа. 
     public void display() {
         Node<T> current = head;
         while (current != null) {
